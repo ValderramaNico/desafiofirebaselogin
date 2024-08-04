@@ -1,6 +1,6 @@
 # esafío evaluado - Firebase (II)
 
-Para poder hacer uso de esta aplicación, se debe usar el siguiente correo y contraseña `email: admin@admin.com | password: 123456` ingresando al siguiente link: https://desafiologin-59800.web.app/LogIn .
+Para poder hacer uso de esta aplicación, se debe usar el siguiente correo y contraseña `email: admin@admin.com | password: 123456` ingresando al siguiente link: https://desafiologin-59800.firebaseapp.com/ .
 
 O simplemente crear un usuario nuevo en la vista de `'Registrarse' (Sign In)`.
 
