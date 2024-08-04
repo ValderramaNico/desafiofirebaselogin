@@ -1,27 +1,27 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import LogInView from "../views/LogInView.vue";
+import SignInView from "../views/SignInView.vue";
+import HomeView from "@/views/HomeView.vue";
 import store from "@/store";
 
 const routes = [
   {
     path: "/",
+    name: "Login",
+    component: LogInView,
+  },
+  {
+    path: "/SignIn",
+    name: "SignIn",
+    component: SignInView,
+  },
+  {
+    path: "/home",
     name: "home",
     component: HomeView,
     meta: {
       authRequired: true,
     },
-  },
-  {
-    path: "/SignIn",
-    name: "SignIn",
-
-    component: () => import("../views/SignInView.vue"),
-  },
-  {
-    path: "/LogIn",
-    name: "LogIn",
-
-    component: () => import("../views/LogInView.vue"),
   },
   {
     /* Ruta 404 */
@@ -37,8 +37,12 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.authRequired && !store.state.loggedUser) {
-    next("/LogIn");
+  if (to.matched.some((route) => route.meta.authRequired)) {
+    if (!store.state.loggedUser) {
+      next("/");
+    } else {
+      next();
+    }
   } else {
     next();
   }

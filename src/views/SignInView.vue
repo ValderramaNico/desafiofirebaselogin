@@ -1,4 +1,5 @@
 <template>
+  <NavBarComponent />
   <div class="background">
     <section class="formPossition">
       <div class="form-container">
@@ -28,9 +29,14 @@
 
 <script>
 import { auth, createUserWithEmailAndPassword } from "../config/firebaseConfig";
+import NavBarComponent from '@/components/NavBarComponent'
+
 
 export default {
   name: "SignInView",
+  components: {
+    NavBarComponent,
+  },
   data() {
     return {
       email: "",

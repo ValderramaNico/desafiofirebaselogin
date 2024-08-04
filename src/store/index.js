@@ -1,15 +1,15 @@
 import { createStore } from "vuex";
-import { auth, signInWithEmailAndPassword } from "firebase/auth";
-import router from "@/router";
+import { auth, signInWithEmailAndPassword } from "../config/firebaseConfig.js";
+import router from "@/router/index.js";
 
 export default createStore({
   state: {
-    loggedUser: null,
+    loggedUser: false,
   },
   getters: {},
   mutations: {
-    isLogged(state, userData) {
-      state.loggedUser = userData;
+    setLoggedUser(state, user) {
+      state.loggedUser = user;
     },
   },
   actions: {
@@ -21,10 +21,11 @@ export default createStore({
           data.email,
           data.password
         );
-        context.commit("isLogged", loginResponse);
+        context.commit("setLoggedUser", loginResponse.user);
         router.push("/home");
+
       } catch (error) {
-        console.log("Error en inicio de sesión", error);
+        console.log("Error en el inicio de sesión", error);
       }
     },
   },

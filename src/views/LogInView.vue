@@ -1,16 +1,27 @@
 <template>
+  <NavBarComponent />
   <div class="background">
-    <form @submit.prevent="login({ user, password })" class="formPossition">
+    <form @submit.prevent="login({ email, password })" class="formPossition">
       <div class="form-container">
         <p class="title">Inicia sesión</p>
-        <form class="form">
-          <input v-model="email" type="email" class="input" placeholder="Email" />
-          <input v-model="password" type="password" class="input" placeholder="Password" />
+        <div class="form">
+          <input
+            v-model="email"
+            type="email"
+            class="input"
+            placeholder="Email"
+          />
+          <input
+            v-model="password"
+            type="password"
+            class="input"
+            placeholder="Password"
+          />
           <button type="submit" class="form-btn">Ingresar</button>
           <span>
             <router-link to="/SignIn">Registrarse</router-link>
           </span>
-        </form>
+        </div>
       </div>
     </form>
   </div>
@@ -18,9 +29,13 @@
 
 <script>
 import { mapActions } from "vuex";
+import NavBarComponent from "@/components/NavBarComponent";
 
 export default {
   name: "LogInView",
+  components: {
+    NavBarComponent,
+  },
   data() {
     return {
       email: "",

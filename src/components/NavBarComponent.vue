@@ -1,14 +1,14 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/logIn">Firebase Login</a>
+      <a class="navbar-brand" href="/">Firebase Login</a>
       <div
         class="collapse navbar-collapse d-flex justify-content-end"
         id="navbarNav"
       >
         <ul class="navbar-nav">
           <li class="nav-item">
-            <router-link to="/LogIn">Iniciar sesión</router-link>
+            <router-link to="/">Iniciar sesión</router-link>
           </li>
           <li class="nav-item">
             <router-link to="/SignIn">Registrarse</router-link>
