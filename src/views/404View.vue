@@ -1,4 +1,5 @@
 <template>
+    <NavBarComponent />
   <div>
     <section class="mainView">
       <h2 class="title">404</h2>
@@ -20,7 +21,13 @@
 </template>
 
 <script>
-export default {};
+import NavBarComponent from "@/components/NavBarComponent";
+
+export default {
+  components: {
+    NavBarComponent,
+  },
+};
 </script>
 
 <style scoped>
